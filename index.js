@@ -15,6 +15,9 @@ app.use("/graphql", graphqlHTTP({
     graphiql: true, // bat tool de dung
 }))
 // setup static file
+app.use("/public", express.static("public"));
+
+// setup static file
 const pathPublicDirectory = path.join(__dirname, "./public");
 // http://localhost:7000 => đi vào thư mục public
 app.use("/public", express.static(pathPublicDirectory));
