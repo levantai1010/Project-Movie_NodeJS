@@ -47,7 +47,7 @@ userRouter.delete('/:id', authenticate, authorize(['ADMIN', 'SUPER_ADMIN']), che
 userRouter.put('/:id', logFeature("cập nhật  người dùng thanh cong"), checkExist(User), updateUser);
 
 // upload avatar
-userRouter.post('/upload-avatar', authenticate, uploadImageSingle(), uploadAvatar);
+userRouter.post('/upload-avatar', authenticate, uploadImageSingle(), uploadAvatar);//uploadImageSingle() phải gọi hàm
 
 module.exports = {
     userRouter,
